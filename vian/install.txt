@@ -1,0 +1,41 @@
+Quy trình chuẩn cho case của bạn (fork riêng + luôn cập nhật từ cộng đồng):
+
+1.Fork repo gốc trên GitHub
+
+Gốc: https://github.com/affaan-m/everything-claude-code.git
+Fork về: https://github.com/hostpro16/everything-claude-code.git
+
+2.Trong máy, vào repo hiện tại và sửa remote
+cd C:\Dev\harness\everything-claude-code
+
+git remote set-url origin https://github.com/hostpro16/everything-claude-code.git
+git remote set-url upstream https://github.com/affaan-m/everything-claude-code.git
+
+git remote -v
+
+Kết quả git remote -v phải là
+
+origin -> hostpro16/everything-claude-code.git
+upstream -> affaan-m/everything-claude-code.git
+
+3.Tạo branch cá nhân để sửa setting
+git checkout -b my-settings
+git push -u origin my-settings
+
+Nếu đã có branch rồi thì:
+git checkout my-settings
+git push -u origin my-settings
+
+4.Từ thư mục repo C:\Dev\harness\everything-claude-code, chạy:
+
+.\vian\sync-upstream.ps1
+Nếu branch khác:
+
+.\vian\sync-upstream.ps1 ten-branch-cua-ban
+Nếu bạn đứng ở thư mục khác, dùng full path:
+
+C:\Dev\harness\everything-claude-code\vian\sync-upstream.ps1
+Mẹo gọn hơn: tạo alias tạm trong PowerShell session hiện tại:
+
+Set-Alias syncecc C:\Dev\harness\everything-claude-code\vian\sync-upstream.ps1
+syncecc
