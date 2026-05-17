@@ -28,14 +28,4 @@ git push -u origin my-settings
 
 4.Từ thư mục repo C:\Dev\harness\everything-claude-code, chạy:
 
-.\vian\sync-upstream.ps1
-Nếu branch khác:
-
-.\vian\sync-upstream.ps1 ten-branch-cua-ban
-Nếu bạn đứng ở thư mục khác, dùng full path:
-
-C:\Dev\harness\everything-claude-code\vian\sync-upstream.ps1
-Mẹo gọn hơn: tạo alias tạm trong PowerShell session hiện tại:
-
-Set-Alias syncecc C:\Dev\harness\everything-claude-code\vian\sync-upstream.ps1
-syncecc
+powershell -ExecutionPolicy Bypass -File ".\vian\sync-upstream.ps1"
